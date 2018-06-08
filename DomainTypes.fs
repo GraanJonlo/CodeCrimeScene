@@ -15,12 +15,12 @@ type Blob = {
 
 type Tree = {
     id:Sha
-    // treeEntries:TreeEntry seq
+//     treeEntries:TreeEntry seq
 }
 
 and TreeEntry =
-    | Blob of Blob
-    | Tree of Tree
+    | Blob of string*Blob
+    | Tree of string*Tree
 
 type Commit = {
     id:Sha
@@ -35,7 +35,3 @@ type GitObject =
     | Tree of Tree
 
 type Repository = Repository of string
-
-type Branch = {
-    repository:Repository
-}
